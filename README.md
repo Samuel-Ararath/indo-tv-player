@@ -29,7 +29,7 @@ Use `npm run build` to produce the static site in `dist/`. Deploy `dist/` to any
 - IPTV-Org English-language playlist: https://iptv-org.github.io/iptv/languages/eng.m3u
 - Official sources should be linked to broadcaster-owned endpoints or official free live pages and labeled separately from community playlist entries.
 
-The app credits IPTV-Org in the interface and links directly to the upstream project, its playlist details, and its license. Channel names, logos, and streams remain attributable to their respective owners/providers. IPTV-Org provides user-submitted links and states that it does not host video files.
+Attribution and source references are documented in this repository. The application interface does not display third-party attribution. Channel names, logos, and streams remain attributable to their respective owners/providers. IPTV-Org provides user-submitted links and states that it does not host video files.
 
 ## Important limitation
 
@@ -46,3 +46,4 @@ IPTV-Org is an independent open-source project and is not affiliated with RuangT
 ## License
 
 Original RuangTV application code is provided under the MIT License. IPTV-Org's project and playlist data remain under the upstream license/terms; this repository does not copy or relicense their playlist files.
+
