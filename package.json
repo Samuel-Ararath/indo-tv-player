@@ -1,1 +1,24 @@
-ewogICJuYW1lIjogImluZG8tdHYtcGxheWVyIiwKICAidmVyc2lvbiI6ICIwLjEuMCIsCiAgInByaXZhdGUiOiB0cnVlLAogICJ0eXBlIjogIm1vZHVsZSIsCiAgInNjcmlwdHMiOiB7CiAgICAiZGV2IjogInZpdGUgLS1ob3N0IDAuMC4wLjAiLAogICAgImJ1aWxkIjogInRzYyAtYiAmJiB2aXRlIGJ1aWxkIiwKICAgICJwcmV2aWV3IjogInZpdGUgcHJldmlldyAtLWhvc3QgMC4wLjAuMCIKICB9LAogICJkZXBlbmRlbmNpZXMiOiB7CiAgICAiaGxzLmpzIjogIl4xLjYuMTMiLAogICAgImx1Y2lkZS1yZWFjdCI6ICJeMC40NjguMCIsCiAgICAicmVhY3QiOiAiXjE5LjAuMCIsCiAgICAicmVhY3QtZG9tIjogIl4xOS4wLjAiCiAgfSwKICAiZGV2RGVwZW5kZW5jaWVzIjogewogICAgIkB0eXBlcy9yZWFjdCI6ICJeMTkuMC4wIiwKICAgICJAdHlwZXMvcmVhY3QtZG9tIjogIl4xOS4wLjAiLAogICAgIkB2aXRlanMvcGx1Z2luLXJlYWN0IjogIl40LjMuNCIsCiAgICAidHlwZXNjcmlwdCI6ICJ+NS43LjIiLAogICAgInZpdGUiOiAiXjYuMC41IgogIH0KfQo=
+{
+  "name": "indo-tv-player",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "hls.js": "^1.6.13",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.5"
+  }
+}
