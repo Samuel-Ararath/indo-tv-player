@@ -29,7 +29,7 @@ Create a production build with:
 npm run build
 ```
 
-The static site is written to `dist/`. Host it over HTTPS to make browser installation available where the browser supports installable web apps. The current project is a PWA/web app; it does not yet include a signed native Android TV APK.
+The static site is written to `dist/`. Host it over HTTPS to make browser installation available where the browser supports installable web apps. The web build is also wrapped as an Android TV app in GitHub Actions. Each successful build stores an unsigned debug APK as the `ruangtv-android-tv-debug-apk` workflow artifact for sideloading. It is not a Play Store release or a signed release APK.
 
 ## Sources and attribution
 
@@ -50,3 +50,4 @@ This guide cannot guarantee that every Indonesian TV channel, sports event, or c
 ## License
 
 Original RuangTV application code is provided under the MIT License in `LICENSE`. IPTV-Org project data remains subject to upstream terms and is fetched at runtime rather than copied into this repository.
+
