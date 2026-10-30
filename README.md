@@ -2,6 +2,15 @@
 
 RuangTV is a TV-first live channel guide with a calm, cinematic home screen and remote-friendly navigation. It brings together official broadcaster pages and publicly indexed community streams for Indonesian and English-language viewing.
 
+## Download
+
+[Open the latest GitHub Actions build](https://github.com/Samuel-Ararath/indo-tv-player/actions/workflows/build.yml) and select the newest successful run. Under **Artifacts**, download:
+
+- `ruangtv-android-tv-debug-apk` for Android TV. Extract the ZIP to get the APK.
+- `ruangtv-web-dist` for the Windows web app files.
+
+The APK is a debug build for sideloading, not a Play Store release. The Windows artifact is a static web build; host its contents over HTTPS to use it as an installable PWA.
+
 ## What it does
 
 - TV-style home screen with a live clock, large focusable cards, and directional remote/keyboard navigation.
