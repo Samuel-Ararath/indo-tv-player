@@ -1,49 +1,52 @@
-# RuangTV — Indo TV Player
+# RuangTV
 
-A polished cross-platform live TV guide for Android phones and Windows PCs. The same responsive PWA can be installed from Chrome/Edge on Android and Windows; it currently uses official broadcaster pages plus HLS community stream links where browser playback is supported.
+RuangTV is a TV-first live channel guide with a calm, cinematic home screen and remote-friendly navigation. It brings together official broadcaster pages and publicly indexed community streams for Indonesian and English-language viewing.
 
-## Product direction
+## What it does
 
-- Show official, free broadcaster streams first when publicly available.
-- Offer IPTV-Org public playlist entries as a clearly labeled community fallback, fetched live from upstream rather than copied into this repository.
-- Restrict the initial directory to Indonesian-language channels and English-language channels.
-- Add search, categories, favorites, playback recovery, and external-player fallback.
-- Never proxy, restream, decrypt, or bypass subscriptions/DRM. Availability and stability depend on each broadcaster's stream host.
+- TV-style home screen with a live clock, large focusable cards, and directional remote/keyboard navigation.
+- Indonesian and English live channel directory, searchable and filterable by category.
+- HLS playback for streams that allow browser playback; official broadcaster choices open their own pages.
+- Local favorites and free movie/series discovery links.
+- Responsive layout for testing in a desktop browser and smaller screens.
 
-## Stack and run locally
+## Free movie sources
 
-React + TypeScript + Vite, with hls.js for browser playback and a responsive installable PWA shell.
+The movie page links to Plex's ad-supported catalog, YouTube search for official rights-holder uploads, and Internet Archive classic-film collections. Catalog availability and viewing rights vary by location and title. RuangTV does not scrape or connect to unauthorized streaming sites such as Idlix, bypass DRM, or rehost video.
+
+## Run and build
+
+Requires Node.js and npm.
 
 ```sh
 npm install
 npm run dev
 ```
 
-Use `npm run build` to produce the static site in `dist/`. Deploy `dist/` to any static host with HTTPS. To install, open the deployed site in Chrome/Edge and choose **Install app** or **Add to Home Screen**.
+Create a production build with:
 
-## Sources
+```sh
+npm run build
+```
 
-- IPTV-Org: https://github.com/iptv-org/iptv
-- IPTV-Org global playlist: https://iptv-org.github.io/iptv/index.m3u
-- IPTV-Org Indonesian playlist: https://iptv-org.github.io/iptv/countries/id.m3u
-- IPTV-Org English-language playlist: https://iptv-org.github.io/iptv/languages/eng.m3u
-- Official sources should be linked to broadcaster-owned endpoints or official free live pages and labeled separately from community playlist entries.
+The static site is written to `dist/`. Host it over HTTPS to make browser installation available where the browser supports installable web apps. The current project is a PWA/web app; it does not yet include a signed native Android TV APK.
 
-Attribution and source references are documented in this repository. The application interface does not display third-party attribution. Channel names, logos, and streams remain attributable to their respective owners/providers. IPTV-Org provides user-submitted links and states that it does not host video files.
+## Sources and attribution
 
-## Important limitation
+Community channel entries are loaded at runtime from the upstream IPTV-Org Indonesian and English-language playlists:
 
-“All Indonesian TV” and all live sports cannot be guaranteed for free. Some broadcasters do not publish open streams, and sports/cartoon rights are often paid or region-limited. IPTV-Org itself describes its entries as user-submitted links; each stream may be removed, geo-restricted, unavailable, or unstable.
+- Project: https://github.com/iptv-org/iptv
+- Indonesian channels: https://iptv-org.github.io/iptv/countries/id.m3u
+- English-language channels: https://iptv-org.github.io/iptv/languages/eng.m3u
 
-## Development status
+IPTV-Org is an independent project and is not affiliated with RuangTV. Its playlist entries are community-submitted links; IPTV-Org does not host the video files. This source credit and the upstream links are documented here in the GitHub repository. Broadcaster names, marks, programs, and streams remain the property of their respective owners.
 
-Early access. The channel directory is based on upstream playlists and should be treated as a convenience index, not as a promise that every channel works, is available in every territory, or carries a particular event. Official entries link to public broadcaster pages rather than attempting to extract protected player URLs.
+Official broadcaster entries point to public pages owned by the broadcaster. An official page may require an account, subscription, or region access, and a link in this guide does not guarantee that a particular stream is free or available.
 
-## Attribution and rights
+## Limitations and rights
 
-IPTV-Org is an independent open-source project and is not affiliated with RuangTV. We appreciate its maintainers and contributors. This application does not own, host, proxy, decrypt, record, or retransmit TV programming. Stream providers and broadcasters control availability and rights. If a link is broken or raises a rights concern, report it to the upstream source/provider; the app can hide a channel locally while upstream corrections are handled by its maintainers.
+This guide cannot guarantee that every Indonesian TV channel, sports event, or cartoon is available for free. Community links can be removed, geo-restricted, or unavailable, and playback smoothness depends on the broadcaster/stream host and your connection. The app does not proxy, decrypt, record, or retransmit programming.
 
 ## License
 
-Original RuangTV application code is provided under the MIT License. IPTV-Org's project and playlist data remain under the upstream license/terms; this repository does not copy or relicense their playlist files.
-
+Original RuangTV application code is provided under the MIT License in `LICENSE`. IPTV-Org project data remains subject to upstream terms and is fetched at runtime rather than copied into this repository.
