@@ -3,11 +3,11 @@
   "short_name": "RuangTV",
   "description": "Siaran TV publik dari sumber resmi dan direktori komunitas.",
   "lang": "id-ID",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#101311",
   "theme_color": "#101311",
   "icons": [
-    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
   ]
 }

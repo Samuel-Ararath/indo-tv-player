@@ -14,6 +14,13 @@ jobs:
   web:
     name: Web app
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -21,12 +28,24 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm run build
+        env:
+          VITE_BASE_PATH: /indo-tv-player/
+      - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
+      - uses: actions/upload-pages-artifact@v4
+        if: github.event_name != 'pull_request'
+        with:
+          path: dist/
       - uses: actions/upload-artifact@v4
         with:
           name: ruangtv-web-dist
           path: dist/
           if-no-files-found: error
           retention-days: 14
+      - name: Deploy GitHub Pages
+        id: deployment
+        if: github.event_name != 'pull_request'
+        uses: actions/deploy-pages@v4
 
   android-tv:
     name: Android TV APK
